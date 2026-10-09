@@ -1,16 +1,15 @@
-# json-diff-ts
+# @deankerr/json-diff-ts
 
-[![CI](https://github.com/ltwlf/json-diff-ts/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ltwlf/json-diff-ts/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/ltwlf/json-diff-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/ltwlf/json-diff-ts)
-[![npm version](https://badge.fury.io/js/json-diff-ts.svg)](https://badge.fury.io/js/json-diff-ts)
-[![npm downloads](https://img.shields.io/npm/dm/json-diff-ts.svg)](https://www.npmjs.com/package/json-diff-ts)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/json-diff-ts)](https://bundlephobia.com/package/json-diff-ts)
-[![Known Vulnerabilities](https://snyk.io/test/github/ltwlf/json-diff-ts/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ltwlf/json-diff-ts?targetFile=package.json)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ltwlf_json-diff-ts&metric=alert_status)](https://sonarcloud.io/dashboard?id=ltwlf_json-diff-ts)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow.svg?logo=buy-me-a-coffee)](https://buymeacoffee.com/leitwolf)
+A maintained fork of [json-diff-ts](https://github.com/ltwlf/json-diff-ts),
+originally authored by Christian Glessner and distributed under the MIT license.
+This release is based on upstream 4.10.4 and fixes object type transitions when
+`treatTypeChangeAsReplace` is `false`.
+
+Install using an npm alias to keep existing `json-diff-ts` imports unchanged:
+
+```sh
+npm install json-diff-ts@npm:@deankerr/json-diff-ts@4.10.5
+```
 
 ## Overview
 
@@ -43,7 +42,7 @@ This library is particularly valuable for applications where tracking changes in
 ## Installation
 
 ```sh
-npm install json-diff-ts
+npm install json-diff-ts@npm:@deankerr/json-diff-ts@4.10.5
 ```
 
 ## Quick Start
