@@ -473,6 +473,11 @@ const compare = (oldObj: any, newObj: any, path: any, keyPath: any, options: Opt
       }
       break;
     case 'Object': {
+      if (typeOfNewObj !== 'Object') {
+        changes = changes.concat(comparePrimitives(oldObj, newObj, path));
+        break;
+      }
+
       const diffs = compareObject(oldObj, newObj, path, keyPath, false, options);
       if (diffs.length) {
         if (path.length) {

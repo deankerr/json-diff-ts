@@ -152,6 +152,14 @@ const diffs = diff(oldData, newData, { treatTypeChangeAsReplace: false });
 
 Date objects can now be updated to primitive values without errors when `treatTypeChangeAsReplace` is set to `false`.
 
+Object-to-scalar, array, and Date transitions also produce a single UPDATE containing
+the complete `oldValue` and `value`:
+
+```javascript
+diff({ config: { enabled: true } }, { config: false }, { treatTypeChangeAsReplace: false });
+// [{ type: 'UPDATE', key: 'config', oldValue: { enabled: true }, value: false }]
+```
+
 ##### Skip Nested Paths
 
 ```javascript
@@ -329,6 +337,7 @@ enum Operation {
 
 ## Release Notes
 
+- **v4.10.5:** Fixed object-to-scalar, array, and Date changes losing the replacement value when `treatTypeChangeAsReplace` is `false`. These changes now retain complete before/after values in one UPDATE.
 - **v4.9.0:**
   - Fixed `applyChangeset` and `revertChangeset` for root-level arrays containing objects (fixes #362)
   - Fixed `compare` on root-level arrays producing unexpected UNCHANGED entries (fixes #358)
